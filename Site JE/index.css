@@ -1,0 +1,97 @@
+body {
+    background-color: #E3C9B2;
+}
+
+header {
+    display: flex;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    gap: 300px;
+}
+
+#logoje {
+    margin-top: 26px;
+}
+
+#menus {
+    display: flex;
+}
+
+.menu {
+    margin: 40px 40px 0 40px;
+    justify-items: right;
+    font-weight: 600;
+    justify-content: center;
+}
+
+.icones {
+    width: 24px;
+    margin: 40px 8px 0 8px;
+}
+
+#principal {
+    display: flex;
+    margin-top: 5%;
+}
+
+#titulo {
+    width: 55%;
+    align-self: center;
+    margin-left: 10%;
+}
+
+#titulo1 {
+    background-color: #A80000;
+    width: 210px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+}
+
+#titulo2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    font-size: 100px;
+    margin: 0;
+}
+
+#titulo3 {
+    font-family: 'Ysabeau SC', sans-serif;
+    font-weight: 50;
+    font-size: 63px;
+    font-weight: 900;
+    margin: 0;
+    margin-top: -20px;
+}
+
+#titulo4 {
+    width: 350px;
+
+    margin-top: 40px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#botao {
+    border-radius: 15px;
+    border: none;
+    color: white;
+    background-color: #A80000;
+    margin-top: 40px;
+    width: 210px;
+    height: 30px;
+}
+
+#imagem {
+    width: 45%;
+}
+
+#carro {
+    width: 70%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border: solid #A80000 1px;
+    padding: 15px;
+}
