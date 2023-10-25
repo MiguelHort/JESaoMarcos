@@ -3,6 +3,7 @@ body {
 }
 
 body a{
+    color: black;
     text-decoration: none;
 }
 
@@ -66,83 +67,57 @@ header {
     width: 24px;
 }
 
+/* Principal da pagina */
+
 #principal {
     display: flex;
-    margin-top: 5%;
-}
-
-#titulo {
-    display: flex;
     flex-direction: column;
-    width: 55%;
-    align-self: center;
-    margin-left: 10%;
+    justify-content: center;
+    align-items: center;
 }
 
-#titulo1 {
-    background-color: #A80000;
-    width: 220px;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    font-size: 30px;
-    font-weight: 600;
-    margin: 0;
+#pesquisa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
 }
 
-#titulo2 {
-    font-family: 'Lato', sans-serif;
-    font-weight: 100;
-    font-size: 100px;
-    margin: 0;
-}
-
-#titulo3 {
-    font-family: 'Ysabeau SC', sans-serif;
-    font-weight: 50;
-    font-size: 63px;
-    font-weight: 900;
-    margin: 0;
-    margin-top: -20px;
-}
-
-#titulo4 {
-    width: 350px;
-
-    margin-top: 40px;
-    font-family: 'Roboto', sans-serif;
-}
-
-#titulo a {
-    color: #A80000;
-}
-
-#botao {
-    border-radius: 15px;
-    border: none;
-    color: white;
-    background-color: #A80000;
-    margin-top: 40px;
-    width: 210px;
+#pesquisa input {
+    width: 600px;
     height: 30px;
+    border: none;
+    border-radius: 10px;
 }
 
-#imagem {
-    width: 45%;
+#nomeMusicas {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 90%;
 }
 
-#imagem img {
-    width: 70%;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border: solid #A80000 1px;
-    padding: 15px;
+#nomeMusicas a div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+#nomeMusicas a div p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
 }
 
 
 
 
 
-/* redimencionar pagina */
+/* Redimencionar pagina */
 
 @media (max-width:400px) {
     #logo {
@@ -168,4 +143,25 @@ header {
         width: 20px;
     }
 
+    /* Principal da pagina */
+
+    #pesquisa input {
+        width: 300px;
+    }
+
+    #nomeMusicas {
+        width: 300px;
+    }
+
+    #nomeMusicas a div {
+        background-color: white;
+        width: 100%;
+        height: 50px;
+    }
+
+    #nomeMusicas {
+        flex-direction: column;
+    }
+
 }
+
