@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Musicas</title>
     <link rel="stylesheet" href="/css/musicas.css">
 </head>
+
 <body>
 
     <header>
@@ -28,39 +30,43 @@
     </header>
 
     <div id="principal">
-        <div id="pesquisa"> 
+        <div id="pesquisa">
             <input type="text">
         </div>
-        <div id="nomeMusicas">
+        <div id="todasMusicas">
+            <div id="nomeMusicas">
                 <a href="">
                     <div>
-                        <p>Oceano</p>
+                        <img src="/img/R (8).jpeg" alt="" width="150px">
+                        <p id="pbrabo">Oceano</p>
                     </div>
                 </a>
-                <a href="">
-                    <div>
-                        <p>Quebrantado</p>
-                    </div>
-                </a>
-                <a href="">
-                    <div>
-                        <p>Furioso Oceano</p>
-                    </div>
-                </a>
-                <a href="">
-                    <div>
-                        <p>Além do rio azul</p>
-                    </div>
-                </a>
-                <a href="">
-                    <div>
-                        <p>Lugar Secreto</p>
-                    </div>
-                </a>
+            </div>
         </div>
-    </div>
 
+        <script>
 
-    
+            // define uma função que recebe um parametro
+            function executaMais1(/*0arametro*/) {
+
+                // acessa o elemento HTML com o id igual ao valor do parametro
+                var gol = document.getElementById('nomeMusicas');
+
+                // acessa a div "principal"
+                var onix = document.getElementById('todasMusicas');
+
+                // cria um laço for que se repete 10 vezes
+                for (let hilux = 0; hilux < 5; hilux++) {
+                    // clona a div e adiciona à div "principal"
+                    onix.appendChild(gol.cloneNode(true));
+                }
+            }
+
+            // chama a função executaMais1 com o argumento "nomeMusicas"
+            executaMais1("nomeMusicas");
+
+        </script>
+
 </body>
+
 </html>
