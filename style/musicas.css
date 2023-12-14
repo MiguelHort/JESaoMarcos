@@ -93,14 +93,15 @@ header {
 
 #todasMusicas {
     display: flex;
+    justify-content: center;
     gap: 20px;
 }
 
 #nomeMusicas {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 10px;
-    width: 90%;
+    width: 80%;
 }
 
 #nomeMusicas a div {
