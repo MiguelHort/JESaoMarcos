@@ -42,7 +42,7 @@
                 // Loop através dos títulos e crie a div
                 foreach ($musicas as $musica) {
                     echo "<a href='../pages/letraMusica.php?id={$musica['id']}'>
-                            <div>
+                            <div id='conteiner'>
                               <img src='../img/capas/{$musica['capa']}' alt='' width='150px'>
                               <p id='pbrabo'>{$musica['titulo']}</p>
                             </div>

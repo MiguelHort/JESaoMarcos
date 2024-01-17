@@ -1,5 +1,5 @@
 body {
-    background-color: #E3C9B2;
+    background-color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -70,62 +70,33 @@ header {
 
 /* Principal da pagina */
 
-#principal {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#titulo {
+    margin-bottom: 0px;
+    font-size: 25px;
+    color: #A80000;
 }
 
-#pesquisa {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100px;
+#artista {
+    margin: 0px;
+    font-size: 20px;
+    color: rgb(209, 209, 0);
 }
 
-#pesquisa input {
-    width: 600px;
-    height: 30px;
-    border: none;
-    border-radius: 10px;
-}
-
-#todasMusicas {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-#nomeMusicas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    width: 80%;
-}
-
-#nomeMusicas a div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    width: 200px;
-    height: 200px;
-    border-radius: 5px;
-}
-
-#nomeMusicas a div p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
+#letra {
+    font-size: 15px;
+    line-height: 2;
 }
 
 
 
 
 
-/* Redimencionar pagina */
+
+
+
+
+
+
 
 @media (max-width:400px) {
     #logo {
@@ -151,34 +122,4 @@ header {
         width: 20px;
     }
 
-    /* Principal da pagina */
-
-    #pesquisa input {
-        width: 300px;
-    }
-
-    #nomeMusicas {
-        width: 300px;
-    }
-
-    #nomeMusicas a div {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        width: 100%;
-        height: 50px;
-    }
-
-    #nomeMusicas img {
-        width: 40px;
-    }
-
-    #nomeMusicas img, p {
-        padding: 20px;
-    }
-
-    #nomeMusicas {
-        flex-direction: column;
-    }
-}
-
+}    
