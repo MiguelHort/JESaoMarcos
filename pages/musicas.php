@@ -13,13 +13,34 @@
     <header>
         <div id="cabecalho">
             <div id="logo">
-                <a href="index.html"><img src="../img/logoJE.png"></a>
+                <a href="index.html"><img src="../img/logoJE1.png"></a>
             </div>
-            <div id="menu">
-                <a href="../../img/facebook.png">Inicial</a>
-                <a href="../img/facebook.png">Musicas</a>
-                <a href="../img/facebook.png">Sobre</a>
-            </div>
+            <button id="iconeMenu" onclick="menu()">
+                <hr>
+                <hr>
+                <hr>
+            </button>
+            <nav id="menuCelular">
+                <img src="../img/x.png" alt="" onclick="fecharMenu()">
+                <a href="../index.html">Inicial</a>
+                <a href="musicas.php">Músicas</a>
+                <a href="/img/facebook.png">Sobre</a>
+                <a href="/img/facebook.png">Fotos</a>
+                <a href="/img/facebook.png">Calendário</a>
+                <div id="redesSociaisCelular">
+                    <img src="../img/whatsapp.png">
+                    <img src="../img/facebook.png">
+                    <img src="../img/instagram.png">
+                    <img src="../img/youtube.png">
+                </div>
+            </nav>
+            <nav id="menu">
+                <a href="../index.html">Inicial</a>
+                <a href="pages/musicas.php">Músicas</a>
+                <a href="/img/facebook.png">Sobre</a>
+                <a href="/img/facebook.png">Fotos</a>
+                <a href="/img/facebook.png">Calendário</a>
+            </nav>
             <div id="redesSociais">
                 <img src="../img/whatsapp.png">
                 <img src="../img/facebook.png">
@@ -31,7 +52,10 @@
 
     <main>
         <section id="pesquisa">
-            <input type="text">
+            <form method="post" action="">
+                <input id="procurar" type="text" name="pesquisa" placeholder="Qual o louvor de hoje?">
+                <input id="lupa" type="submit" value="Procurar">
+            </form>
         </section>
 
         <section id="todasMusicas">
@@ -39,20 +63,39 @@
                 <?php
                 include '../database/tituloMusicas.php';
 
-                // Loop através dos títulos e crie a div
-                foreach ($musicas as $musica) {
-                    echo "<a href='../pages/letraMusica.php?id={$musica['id']}'>
-                            <div id='conteiner'>
-                              <img src='../img/capas/{$musica['capa']}' alt='' width='150px'>
-                              <p id='pbrabo'>{$musica['titulo']}</p>
-                            </div>
-                          </a>";
+                $pesquisa = isset($_POST['pesquisa']) ? $_POST['pesquisa'] : '';
+                $query = "SELECT * FROM musicas";
+                if (!empty($pesquisa)) {
+                    $pesquisa = mysqli_real_escape_string($conexao, $pesquisa);
+                    $query .= " WHERE titulo LIKE '%$pesquisa%'";
                 }
+                $result = mysqli_query($conexao, $query);
+
+                while ($row = mysqli_fetch_array($result)) {
+                    echo "<a href='../pages/letraMusica.php?id={$row['id']}'>
+            <div id='conteiner'>
+              <img src='../img/capas/{$row['capa']}' alt='' width='150px'>
+              <p id='pbrabo'>{$row['titulo']}</p>
+            </div>
+          </a>";
+                }
+
+
                 ?>
             </article>
         </section>
 
     </main>
+
+    <script>
+        function menu() {
+            document.getElementById("menuCelular").style.display = "flex";
+        };
+
+        function fecharMenu() {
+            document.getElementById("menuCelular").style.display = "";
+        };
+    </script>
 
 </body>
 
