@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musicas</title>
-    <link rel="stylesheet" href="../style/musicas.css">
+    <title>Albuns de fotos</title>
+    <link rel="stylesheet" href="../style/fotos.css">
 </head>
 
 <body>
@@ -50,42 +50,24 @@
         </div>
     </header>
 
+
+
     <main>
-        <section id="pesquisa">
-            <form method="post" action="">
-                <input id="procurar" type="text" name="pesquisa" placeholder="Qual o louvor de hoje?">
-                <input id="lupa" type="submit" value="Procurar">
-            </form>
+        <section id="fotos">
+            <?php
+            include '../database/caminhoFotos.php';
+
+            $id = $_GET['id'];
+
+
+            foreach ($fotos as $foto) {
+                if ($foto['album'] == $id)
+                    echo "<a href='{$foto['caminho']}' target='_blank'><img id='foto' src='{$foto['caminho']}' alt=''></a>";
+            }
+            ?>
         </section>
-
-        <section id="todasMusicas">
-            <article id="nomeMusicas">
-                <?php
-                include '../database/tituloMusicas.php';
-
-                $pesquisa = isset($_POST['pesquisa']) ? $_POST['pesquisa'] : '';
-                $query = "SELECT * FROM musicas";
-                if (!empty($pesquisa)) {
-                    $pesquisa = mysqli_real_escape_string($conexao, $pesquisa);
-                    $query .= " WHERE titulo LIKE '%$pesquisa%'";
-                }
-                $result = mysqli_query($conexao, $query);
-
-                while ($row = mysqli_fetch_array($result)) {
-                    echo "<a href='../pages/letraMusica.php?id={$row['id']}'>
-            <div id='conteiner'>
-              <img src='../img/capas/{$row['capa']}' alt='' width='150px'>
-              <p id='pbrabo'>{$row['titulo']}</p>
-            </div>
-          </a>";
-                }
-
-
-                ?>
-            </article>
-        </section>
-
     </main>
+
 
     <script>
         function menu() {

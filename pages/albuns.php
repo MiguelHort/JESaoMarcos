@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musicas</title>
-    <link rel="stylesheet" href="../style/musicas.css">
+    <title>Albuns de fotos</title>
+    <link rel="stylesheet" href="../style/albuns.css">
 </head>
 
 <body>
@@ -61,10 +61,10 @@
         <section id="todasMusicas">
             <article id="nomeMusicas">
                 <?php
-                include '../database/tituloMusicas.php';
+                include '../database/tituloAlbuns.php';
 
                 $pesquisa = isset($_POST['pesquisa']) ? $_POST['pesquisa'] : '';
-                $query = "SELECT * FROM musicas";
+                $query = "SELECT * FROM albuns";
                 if (!empty($pesquisa)) {
                     $pesquisa = mysqli_real_escape_string($conexao, $pesquisa);
                     $query .= " WHERE titulo LIKE '%$pesquisa%'";
@@ -72,9 +72,9 @@
                 $result = mysqli_query($conexao, $query);
 
                 while ($row = mysqli_fetch_array($result)) {
-                    echo "<a href='../pages/letraMusica.php?id={$row['id']}'>
+                    echo "<a href='../pages/fotos.php?id={$row['id']}'>
             <div id='conteiner'>
-              <img src='../img/capas/{$row['capa']}' alt='' width='150px'>
+              <img src='{$row['capa']}' alt='' width='150px'>
               <p id='pbrabo'>{$row['titulo']}</p>
             </div>
           </a>";
